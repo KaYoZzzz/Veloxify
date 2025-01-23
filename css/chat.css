@@ -1,0 +1,164 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents the page from scrolling */
+}
+body {
+    background-color: #F0EDDE;
+    color: #021E36;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header {
+    background-color: #021E36;
+    color: #F0EDDE;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+.home-button, .logout-button {
+    position: absolute;
+    top: 20px;
+    background-color: #6892AA;
+    border: none;
+    color: #F0EDDE;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 22px;
+}
+.home-button {
+    left: 40px;
+}
+.logout-button {
+    right: 40px;
+}
+.home-button:hover, .logout-button:hover {
+    background-color: #021E36;
+    transform: scale(1.05);
+}
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden; /* Prevents the chat container from causing page scroll */
+}
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #F0EDDE;
+    border: 1px solid #021E36;
+    border-radius: 5px;
+    max-height: calc(100vh - 200px); /* Adjust this value as needed */
+}
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 60%;
+    position: relative;
+    display: inline-block;
+    clear: both;
+}
+.message.sent {
+    background-color: #021E36;
+    color: #F0EDDE;
+    align-self: flex-end;
+    text-align: right;
+    float: right;
+    border-bottom-right-radius: 0;
+}
+.message.received {
+    background-color: #6892AA;
+    color: #F0EDDE;
+    align-self: flex-start;
+    text-align: left;
+    float: left;
+    border-bottom-left-radius: 0;
+}
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.input-container textarea {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #021E36;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+}
+.input-container button {
+    background-color: #6892AA;
+    border: none;
+    color: #F0EDDE;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+}
+.input-container button:hover {
+    background-color: #021E36;
+    transform: scale(1.05);
+}
+/* Hide scrollbars for all elements */
+* {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+*::-webkit-scrollbar { /* WebKit browsers */
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .header {
+        padding: 15px;
+    }
+    .home-button, .logout-button {
+        padding: 5px 10px;
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 413px) {
+    .header {
+        padding: 15px;
+    }
+    .home-button, .logout-button {
+        padding: 5px 10px;
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 382px) {
+    .header {
+        padding: 15px;
+    }
+    .home-button, .logout-button {
+        padding: 5px 10px;
+        font-size: 16px;
+        
+    }
+    .home-button{
+        left: 35px;
+    }
+    .logout-button{
+        right: 35px;
+    }
+}
