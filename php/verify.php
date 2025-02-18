@@ -1,12 +1,12 @@
 <?php
 session_start();
-require ("connectDB.php");
+require("connectDB.php");
 $connection = connectDb();
 if ($connection != false) {
 	$usernameIn = $_POST['usernameField'];
 	$pswIn = $_POST['passwordField'];
 
-	$sql = "SELECT pwd FROM user WHERE username = :username";
+	$sql = "SELECT pwd FROM user WHERE BINARY username = :username";
 	$command = $connection->prepare($sql);
 	$command->bindParam(':username', $usernameIn);
 	$command->execute();
